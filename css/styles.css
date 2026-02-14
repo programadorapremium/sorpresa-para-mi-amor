@@ -6,7 +6,7 @@ body {
     overflow-x: hidden;
 }
 
-/* 🔥 CAMBIO IMPORTANTE: ahora adaptable */
+/* Contenedor principal */
 .container {
     background: rgba(255,255,255,0.95);
     width: 90%;
@@ -26,7 +26,7 @@ body {
     justify-content: center;
     gap: 20px;
     margin: 20px 0;
-    flex-wrap: wrap; /* 🔥 permite que bajen en móvil */
+    flex-wrap: wrap;
 }
 
 .foto {
@@ -42,9 +42,10 @@ body {
     transform: scale(1.1);
 }
 
+/* Botones */
 .botones {
     position: relative;
-    height: 120px;
+    height: 180px; /* más espacio para que el botón NO se mueva */
     margin-top: 20px;
 }
 
@@ -68,6 +69,7 @@ body {
 .btn-no {
     position: absolute;
     left: 60%;
+    top: 50px;
     padding: 12px 25px;
     background: linear-gradient(145deg, #222, #444);
     color: white;
@@ -101,7 +103,6 @@ body {
     background: rgba(0,0,0,0.7);
 }
 
-/* 🔥 CAMBIO: adaptable */
 .modal-content {
     background: white;
     width: 90%;
@@ -138,8 +139,22 @@ body {
     to { transform: scale(1); opacity: 1; }
 }
 
+/* Pantalla final rosa */
+.mensaje-final {
+    display: none; /* 🔥 importante para que no aparezca antes */
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(145deg, #ff4f9a, #ff85c1);
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    padding-top: 40vh;
+    z-index: 9999;
+}
+
 /* ========================= */
-/* 📱 RESPONSIVE CELULAR REAL */
+/* 📱 RESPONSIVE CELULAR */
 /* ========================= */
 
 @media (max-width: 768px) {
@@ -165,20 +180,7 @@ body {
     }
 
     .botones {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 15px;
-    }
-
-    .btn-no {
-        position: static; /* 🔥 evita que se descontrole en móvil */
-    }
-
-    .mensaje-final {
-        font-size: 20px;
-        padding-top: 200px;
+        height: 180px; /* mantenemos espacio para que NO se mueva */
     }
 
 }
