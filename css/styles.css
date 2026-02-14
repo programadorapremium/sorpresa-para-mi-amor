@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Segoe UI', sans-serif;
     background: url('../assets/images/fondo.avif') no-repeat center center fixed;
     background-size: cover;
     overflow-x: hidden;
@@ -18,25 +18,6 @@ body {
     text-align: center;
     position: relative;
     z-index: 2;
-}
-
-/* TITULOS ROMÁNTICOS */
-h1, h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 42px;
-    color: #c4005c;
-    font-weight: normal;
-}
-
-.mensaje-largo p {
-    font-style: italic;
-    font-size: 18px;
-}
-
-.firma {
-    font-family: 'Great Vibes', cursive;
-    font-size: 28px;
-    color: #c4005c;
 }
 
 /* Galería */
@@ -61,17 +42,13 @@ h1, h2 {
     transform: scale(1.1);
 }
 
-/* BOTONES ARREGLADOS */
+/* Botones */
 .botones {
     position: relative;
-    height: 120px;
+    height: 180px;
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
 }
 
-/* Botón Sí */
 .btn-si {
     padding: 12px 25px;
     font-weight: bold;
@@ -89,8 +66,10 @@ h1, h2 {
     transform: scale(1.1);
 }
 
-/* Botón No (AHORA INICIA AL LADO DEL SÍ) */
 .btn-no {
+    position: absolute;
+    left: 60%;
+    top: 50px;
     padding: 12px 25px;
     background: linear-gradient(145deg, #222, #444);
     color: white;
@@ -100,14 +79,19 @@ h1, h2 {
     font-weight: bold;
     transition: 0.2s;
     box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    position: relative;
 }
 
-.btn-no.mover {
-    position: absolute;
+.btn-no:hover {
+    background: linear-gradient(145deg, #000, #555);
 }
 
-/* Modal, lluvia y resto queda EXACTAMENTE IGUAL */
+#fraseGraciosa {
+    min-height: 30px;
+    font-weight: bold;
+    color: #e6005c;
+}
+
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -155,6 +139,7 @@ h1, h2 {
     to { transform: scale(1); opacity: 1; }
 }
 
+/* Pantalla final rosa */
 .mensaje-final {
     display: none;
     position: fixed;
@@ -167,3 +152,61 @@ h1, h2 {
     padding-top: 40vh;
     z-index: 9999;
 }
+
+/* ========================= */
+/* 💖 LLUVIA CORAZONES Y PÉTALOS */
+/* ========================= */
+
+.corazon, .petalo {
+    position: fixed;
+    top: -30px;
+    font-size: 22px;
+    pointer-events: none;
+    z-index: 1;
+    animation-name: caer;
+    animation-timing-function: linear;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(-30px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.8;
+    }
+}
+
+/* ========================= */
+/* 📱 RESPONSIVE CELULAR */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .galeria {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .foto {
+        width: 90%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .botones {
+        height: 180px;
+    }
+
+}
+
