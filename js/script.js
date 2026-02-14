@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => { 
 
     /* Música */
     const musica = document.getElementById("musica");
@@ -75,7 +75,7 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => elemento.remove(), 1500);
         }
 
-        /* TU EXPLOSIÓN CON LATIDO */
+        /* EXPLOSIÓN CON LATIDO */
         for (let i = 0; i < 60; i++) {
             const elemento = document.createElement("div");
             elemento.textContent = Math.random() > 0.5 ? "💖" : "🌹";
@@ -145,25 +145,46 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
 
-    /* Lluvia */
+    /* ============================= */
+    /* LLUVIA CORREGIDA REAL */
+    /* ============================= */
+
+    function crearElemento(lluviaEmoji, duracion) {
+
+        const elemento = document.createElement("div");
+        elemento.textContent = lluviaEmoji;
+        elemento.style.position = "fixed";
+
+        // 🔥 POSICIÓN HORIZONTAL REAL EN TODA LA PANTALLA
+        elemento.style.left = Math.random() * window.innerWidth + "px";
+
+        elemento.style.top = "-30px";
+        elemento.style.fontSize = (20 + Math.random()*25) + "px";
+        elemento.style.pointerEvents = "none";
+        elemento.style.zIndex = "1";
+
+        document.body.appendChild(elemento);
+
+        let velocidad = 2 + Math.random() * 3;
+        let movimiento = setInterval(() => {
+
+            elemento.style.top =
+                elemento.offsetTop + velocidad + "px";
+
+            if (elemento.offsetTop > window.innerHeight) {
+                clearInterval(movimiento);
+                elemento.remove();
+            }
+
+        }, 20);
+    }
+
     setInterval(() => {
-        const corazon = document.createElement("div");
-        corazon.classList.add("corazon");
-        corazon.textContent = "💖";
-        corazon.style.left = Math.random() * 100 + "vw";
-        corazon.style.animationDuration = (4 + Math.random()*3) + "s";
-        document.body.appendChild(corazon);
-        setTimeout(()=> corazon.remove(), 7000);
+        crearElemento("💖");
     }, 600);
 
     setInterval(() => {
-        const petalo = document.createElement("div");
-        petalo.classList.add("petalo");
-        petalo.textContent = "🌸";
-        petalo.style.left = Math.random() * 100 + "vw";
-        petalo.style.animationDuration = (5 + Math.random()*3) + "s";
-        document.body.appendChild(petalo);
-        setTimeout(()=> petalo.remove(), 8000);
+        crearElemento("🌸");
     }, 800);
 
 });
