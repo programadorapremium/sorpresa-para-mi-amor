@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const mensajes = [
         "Uno que no te abandonará nunca, si eliges quedarte conmigo ❤️‍🩹",
         "Y por eso quiero quedarme contigo toda la vida 💖✨",
-        "Mi lugar favorito siempre será a tu lado 😍"
+        "Por eso te elijo a ti, hoy mañana y siempre ♥️♾️"
     ];
 
     function escribirTexto(texto) {
@@ -188,3 +188,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 800);
 
 });
+
