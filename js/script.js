@@ -34,7 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
         "Inténtalo otra vez 😂"
     ];
 
+    /* 🔥 AQUÍ ESTÁ LA MEJORA */
     botonNo.addEventListener("mouseover", () => {
+
+        // Activa posición absoluta SOLO cuando empieza a moverse
+        botonNo.classList.add("mover");
+
         const maxX = contenedor.clientWidth - botonNo.clientWidth;
         const maxY = contenedor.clientHeight - botonNo.clientHeight;
 
@@ -149,15 +154,13 @@ document.addEventListener("DOMContentLoaded", () => {
     /* LLUVIA CORREGIDA REAL */
     /* ============================= */
 
-    function crearElemento(lluviaEmoji, duracion) {
+    function crearElemento(lluviaEmoji) {
 
         const elemento = document.createElement("div");
         elemento.textContent = lluviaEmoji;
         elemento.style.position = "fixed";
 
-        // 🔥 POSICIÓN HORIZONTAL REAL EN TODA LA PANTALLA
         elemento.style.left = Math.random() * window.innerWidth + "px";
-
         elemento.style.top = "-30px";
         elemento.style.fontSize = (20 + Math.random()*25) + "px";
         elemento.style.pointerEvents = "none";
@@ -188,5 +191,3 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 800);
 
 });
-
-
