@@ -73,7 +73,7 @@ h2 {
     transform: scale(1.1);
 }
 
-/* BOTONES ARREGLADOS */
+/* BOTONES */
 .botones {
     position: relative;
     display: flex;
@@ -101,7 +101,7 @@ h2 {
 }
 
 .btn-no {
-    position: relative; /* IMPORTANTE */
+    position: relative;
     padding: 12px 25px;
     background: linear-gradient(145deg, #222, #444);
     color: white;
@@ -170,7 +170,7 @@ h2 {
     to { transform: scale(1); opacity: 1; }
 }
 
-/* Pantalla final rosa */
+/* Pantalla final */
 .mensaje-final {
     display: none;
     position: fixed;
