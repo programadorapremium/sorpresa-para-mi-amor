@@ -1,7 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
+    font-family: 'Playfair Display', serif;
     background: url('../assets/images/fondo.avif') no-repeat center center fixed;
     background-size: cover;
     overflow-x: hidden;
@@ -21,34 +20,23 @@ body {
     z-index: 2;
 }
 
-/* TITULO PRINCIPAL */
-h1 {
+/* TITULOS ROMÁNTICOS */
+h1, h2 {
     font-family: 'Great Vibes', cursive;
-    font-size: 48px;
+    font-size: 42px;
     color: #c4005c;
     font-weight: normal;
 }
 
-/* TEXTO */
-.mensaje-largo {
-    font-size: 20px;
-    line-height: 1.6;
+.mensaje-largo p {
+    font-style: italic;
+    font-size: 18px;
 }
 
-/* PREGUNTA */
-h2 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 38px;
-    font-weight: normal;
-    color: #d10068;
-}
-
-/* FIRMA */
 .firma {
-    margin-top: 30px;
     font-family: 'Great Vibes', cursive;
     font-size: 28px;
-    color: #b3005a;
+    color: #c4005c;
 }
 
 /* Galería */
@@ -73,19 +61,21 @@ h2 {
     transform: scale(1.1);
 }
 
-/* BOTONES */
+/* BOTONES ARREGLADOS */
 .botones {
     position: relative;
+    height: 120px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     gap: 20px;
-    margin-top: 20px;
-    height: 120px;
 }
 
+/* Botón Sí */
 .btn-si {
     padding: 12px 25px;
-    font-size: 18px;
+    font-weight: bold;
+    font-size: 16px;
     color: white;
     background: linear-gradient(145deg, #ff2d75, #ff0055);
     border: none;
@@ -93,37 +83,31 @@ h2 {
     cursor: pointer;
     transition: 0.3s;
     box-shadow: 0 5px 15px rgba(255, 45, 117, 0.5);
-    font-family: 'Cormorant Garamond', serif;
 }
 
 .btn-si:hover {
     transform: scale(1.1);
 }
 
+/* Botón No (AHORA INICIA AL LADO DEL SÍ) */
 .btn-no {
-    position: relative;
     padding: 12px 25px;
     background: linear-gradient(145deg, #222, #444);
     color: white;
     border: none;
-    border-radius: 30px;
+    border-radius: 8px;
     cursor: pointer;
+    font-weight: bold;
     transition: 0.2s;
     box-shadow: 0 5px 15px rgba(0,0,0,0.4);
-    font-family: 'Cormorant Garamond', serif;
+    position: relative;
 }
 
-.btn-no:hover {
-    background: linear-gradient(145deg, #000, #555);
+.btn-no.mover {
+    position: absolute;
 }
 
-#fraseGraciosa {
-    min-height: 30px;
-    font-weight: bold;
-    color: #e6005c;
-}
-
-/* Modal */
+/* Modal, lluvia y resto queda EXACTAMENTE IGUAL */
 .modal {
     display: none;
     position: fixed;
@@ -153,8 +137,9 @@ h2 {
 
 #textoCarta {
     margin-top: 20px;
-    font-size: 24px;
-    font-family: 'Great Vibes', cursive;
+    font-size: 22px;
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
     color: #c4005c;
     min-height: 50px;
 }
@@ -170,15 +155,14 @@ h2 {
     to { transform: scale(1); opacity: 1; }
 }
 
-/* Pantalla final */
 .mensaje-final {
     display: none;
     position: fixed;
     inset: 0;
     background: linear-gradient(145deg, #ff4f9a, #ff85c1);
     color: white;
-    font-family: 'Great Vibes', cursive;
-    font-size: 45px;
+    font-size: 28px;
+    font-weight: bold;
     text-align: center;
     padding-top: 40vh;
     z-index: 9999;
