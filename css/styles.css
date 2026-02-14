@@ -45,7 +45,7 @@ body {
 /* Botones */
 .botones {
     position: relative;
-    height: 180px; /* más espacio para que el botón NO se mueva */
+    height: 180px;
     margin-top: 20px;
 }
 
@@ -141,7 +141,7 @@ body {
 
 /* Pantalla final rosa */
 .mensaje-final {
-    display: none; /* 🔥 importante para que no aparezca antes */
+    display: none;
     position: fixed;
     inset: 0;
     background: linear-gradient(145deg, #ff4f9a, #ff85c1);
@@ -151,6 +151,31 @@ body {
     text-align: center;
     padding-top: 40vh;
     z-index: 9999;
+}
+
+/* ========================= */
+/* 💖 LLUVIA CORAZONES Y PÉTALOS */
+/* ========================= */
+
+.corazon, .petalo {
+    position: fixed;
+    top: -30px;
+    font-size: 22px;
+    pointer-events: none;
+    z-index: 1;
+    animation-name: caer;
+    animation-timing-function: linear;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(-30px) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.8;
+    }
 }
 
 /* ========================= */
@@ -180,7 +205,7 @@ body {
     }
 
     .botones {
-        height: 180px; /* mantenemos espacio para que NO se mueva */
+        height: 180px;
     }
 
 }
